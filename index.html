@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CGPA Simulator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-text">
+        <h1>CGPA Simulator</h1>
+        <p>
+          Plan your academic journey with precision. Simulate your grades, track
+          your cumulative progress, and calculate the effort needed to reach
+          your target GPA.
+        </p>
+      </div>
+    </header>
+    <section class="container">
+      <section class="main-container">
+        <section class="semesters-container">
+          <div class="semester-card bg-light">
+            <div class="semester-card-header">
+              <h3>Semester 1</h3>
+              <button class="remove-semester-btn">Remove Semester</button>
+            </div>
+            <div class="semester-card-body">
+              <div class="table-container">
+                <table class="courses-table" data-id="1">
+                  <thead>
+                    <tr>
+                      <th>COURSE NAME</th>
+                      <th>UNIT</th>
+                      <th title="Expected Grade">GRADE</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="E.g CSC 303"
+                          class="course-code"
+                          name="course-code"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="number"
+                          min="0"
+                          class="unit"
+                          value="0"
+                          placeholder=">=0"
+                        />
+                      </td>
+                      <td>
+                        <select class="grade">
+                          <option value="5" selected>A (5.0)</option>
+                          <option value="4">B (4.0)</option>
+                          <option value="3">C (3.0)</option>
+                          <option value="2">D (2.0)</option>
+                          <option value="1">E (1.0)</option>
+                          <option value="0">F (0.0)</option>
+                        </select>
+                      </td>
+                      <td>
+                        <span
+                          class="fa-solid fa-xmark delete-course-btn"
+                          title="Delete course"
+                        ></span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="semester-card-footer">
+              <button class="add-course-btn">&plus; Add Course</button>
+              <button class="calc-GPA-btn">
+                <i class="fa-solid fa-calculator"></i> Calculate GPA
+              </button>
+              <div>
+                <h4 class="GPA-result-error">Total Units cannot be 0</h4>
+                <h4>
+                  Semester GPA: <span class="semester-gpa-value">4.40</span>
+                </h4>
+              </div>
+            </div>
+          </div>
+        </section>
+        <button
+          class="add-semester-btn bg-light border-radius-10px box-shadow-container"
+        >
+          &plus; Add New Semester
+        </button>
+      </section>
+
+      <section class="aside-container">
+        <div
+          class="overview-container bordered-container border-radius-10px box-shadow-container bg-light"
+        >
+          <h3>Academic Overview</h3>
+          <div class="overview-body">
+            <div
+              class="flex-direction-column text-align-center overview-subcontainer border-radius-10px"
+            >
+              <h6>TOTAL CREDITS</h6>
+              <span id="total-credits">45</span>
+            </div>
+            <div
+              class="flex-direction-column text-align-center overview-subcontainer border-radius-10px"
+            >
+              <h6>CURRENT CGPA</h6>
+              <span id="current-CGPA">0.00</span>
+            </div>
+          </div>
+          <button
+            class="update-all-calc-btn border-radius-10px box-shadow-container"
+          >
+            <i class="fa-solid fa-arrows-rotate"></i> Update All Calculations
+          </button>
+        </div>
+      </section>
+    </section>
+
+    <script src="index.js"></script>
+  </body>
+</html>
